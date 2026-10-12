@@ -7,9 +7,9 @@ A full-stack employee management application built to demonstrate end-to-end Dev
 ```
 Frontend (React + Vite) :3000
          ↓
-Backend (Node.js + Express) :5000
+Backend (Node.js + Express) :5001
          ↓
-MongoDB :27017
+MongoDB :27017 (Devops database)
 ```
 
 ## 🚀 Technology Stack
@@ -56,8 +56,8 @@ MongoDB :27017
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
-   cd employee-management-app
+   git clone https://github.com/Nagaraj-UI/fullstack-Devops.git
+   cd fullstack-Devops
    ```
 
 2. **Setup Backend**
@@ -67,7 +67,7 @@ MongoDB :27017
    cp .env.example .env
    npm run dev
    ```
-   Backend will run on http://localhost:5000
+   Backend will run on http://localhost:5001
 
 3. **Setup Frontend** (in new terminal)
    ```bash
@@ -79,7 +79,7 @@ MongoDB :27017
 
 4. **Verify MongoDB is running**
    - Check MongoDB Compass connection to localhost:27017
-   - Database `employee_db` will be created automatically
+   - Database `Devops` will be created automatically
 
 ### Testing the Application
 
@@ -92,7 +92,7 @@ MongoDB :27017
 
 Test the backend health endpoint:
 ```bash
-curl http://localhost:5000/health
+curl http://localhost:5001/health
 ```
 
 Expected response:
@@ -107,7 +107,7 @@ Expected response:
 ## 📁 Project Structure
 
 ```
-employee-management-app/
+fullstack-Devops/
 ├── frontend/              # React frontend application
 │   ├── src/
 │   │   ├── components/   # React components
@@ -130,8 +130,8 @@ employee-management-app/
 
 ## 🔄 Development Phases
 
-- [x] **Phase 1:** Project Foundation (Current)
-- [ ] **Phase 2:** Git and GitHub Workflow
+- [x] **Phase 1:** Project Foundation ✅
+- [x] **Phase 2:** Git and GitHub Workflow ✅ (In Progress)
 - [ ] **Phase 3:** Docker Fundamentals
 - [ ] **Phase 4:** Docker Registry and Amazon ECR
 - [ ] **Phase 5:** AWS Fundamentals
@@ -149,22 +149,23 @@ employee-management-app/
 
 ### Backend (.env)
 ```
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/employee_db
+PORT=5001
+MONGODB_URI=mongodb://localhost:27017/Devops
 NODE_ENV=development
+CORS_ORIGIN=http://localhost:3000
 ```
 
 ## 🐛 Troubleshooting
 
 ### Backend won't start
 - Ensure MongoDB is running on localhost:27017
-- Check if port 5000 is not in use
+- Check if port 5001 is not in use
 - Verify .env file exists and has correct values
 
 ### Frontend can't connect to backend
-- Ensure backend is running on port 5000
+- Ensure backend is running on port 5001
 - Check browser console for CORS errors
-- Verify API_URL in frontend configuration
+- Verify proxy configuration in frontend/vite.config.js
 
 ### Database connection issues
 - Open MongoDB Compass and verify connection
@@ -178,10 +179,11 @@ This project demonstrates:
 2. RESTful API design
 3. MongoDB database integration
 4. Environment-based configuration
-5. Preparation for DevOps tooling (Docker, Kubernetes, CI/CD)
+5. Git workflow and version control
+6. Preparation for DevOps tooling (Docker, Kubernetes, CI/CD)
 
 ---
 
-**Current Phase:** Phase 1 - Project Foundation  
-**Status:** In Development  
-**Next:** Git workflow and version control
+**Current Phase:** Phase 2 - Git and GitHub Workflow  
+**Status:** In Progress  
+**Next:** Docker containerization
